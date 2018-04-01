@@ -1,0 +1,29 @@
+version: "2"
+services:
+  eureka-server:
+    # build: ./eureka-server
+    image: wesleyegberto/eureka-server
+    ports:
+    - 8761:8761
+    networks:
+    - netflix-study
+
+  stock-service:
+    # build: ./eureka-client-stock-service
+    image: wesleyegberto/stock-service
+    ports:
+    - 8090:8090
+    networks:
+    - netflix-study
+
+  store-service:
+    # build: ./eureka-client-store-service
+    image: wesleyegberto/store-service
+    ports:
+    - 8095:8095
+    networks:
+    - netflix-study
+
+networks:
+  netflix-study:
+    driver: bridge
