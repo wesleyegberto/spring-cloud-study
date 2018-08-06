@@ -1,5 +1,32 @@
 version: "3"
 services:
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+    - netflix-study
+
+  turbine-streamer:
+    # build: ./turbine-streamer
+    image: wesleyegberto/turbine-streamer
+    ports:
+    - 8989:8989
+    - 8990:8990
+    networks:
+    - netflix-study
+    depends_on:
+    - eureka-server
+
+  monitor-dashboard:
+    # build: ./monitor-dashboard
+    image: wesleyegberto/monitor-dashboard
+    ports:
+    - 7979:7979
+    networks:
+    - netflix-study
+
   eureka-server:
     # build: ./eureka-server
     image: wesleyegberto/eureka-server
@@ -15,6 +42,8 @@ services:
     - 8080:8080
     networks:
     - netflix-study
+    depends_on:
+    - eureka-server
 
   stock-service:
     # build: ./eureka-client-stock-service
@@ -24,7 +53,7 @@ services:
     networks:
     - netflix-study
     depends_on:
-      - eureka-server
+    - eureka-server
 
   store-service:
     # build: ./eureka-client-store-service
@@ -34,7 +63,7 @@ services:
     networks:
     - netflix-study
     depends_on:
-      - eureka-server
+    - eureka-server
 
 networks:
   netflix-study:
