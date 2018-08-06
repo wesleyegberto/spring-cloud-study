@@ -2,7 +2,7 @@
 
 ## Components
 
-### Infra Components
+#### Infra Components
 * RabbitMQ
   * Will store the events from API's hystrix.
 * Eureka Server
@@ -16,7 +16,7 @@
 * Monitor Dashboard
   * The dashboard to visualize metrics.
 
-## Business Components
+#### Business Components
 * Stock Service
   * Our Stock API.
 * Store Service
