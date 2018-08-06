@@ -1,10 +1,18 @@
-version: "2"
+version: "3"
 services:
   eureka-server:
     # build: ./eureka-server
     image: wesleyegberto/eureka-server
     ports:
     - 8761:8761
+    networks:
+    - netflix-study
+
+  zuul-server:
+    # build: ./zuul-server
+    image: wesleyegberto/zuul-server
+    ports:
+    - 8080:8080
     networks:
     - netflix-study
 
@@ -15,6 +23,8 @@ services:
     - 8090:8090
     networks:
     - netflix-study
+    depends_on:
+      - eureka-server
 
   store-service:
     # build: ./eureka-client-store-service
@@ -23,6 +33,8 @@ services:
     - 8095:8095
     networks:
     - netflix-study
+    depends_on:
+      - eureka-server
 
 networks:
   netflix-study:
