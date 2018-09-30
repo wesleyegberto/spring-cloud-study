@@ -1,5 +1,9 @@
 
 # Created by https://www.gitignore.io/api/java,eclipse,java-web,intellij,visualstudiocode
+**/.DS_Store
+**/mvnw
+**/mvnw.cmd
+**/.mvn
 
 ### Eclipse ###
 
@@ -54,10 +58,10 @@ local.properties
 .worksheet
 
 ### Eclipse Patch ###
-# Eclipse Core		
+# Eclipse Core
 .project
 
-# JDT-specific (Eclipse Java Development Tools)		
+# JDT-specific (Eclipse Java Development Tools)
 .classpath
 
 ### Intellij ###
