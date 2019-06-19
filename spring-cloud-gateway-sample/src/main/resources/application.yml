@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: host_route
+          uri: http://httpbin.org
+          predicates:
+            - Path=/get_yml
+          filters:
+            - RewritePath=/get_yml, /get

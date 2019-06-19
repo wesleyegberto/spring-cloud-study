@@ -1,6 +1,12 @@
 # Spring Cloud + Netflix Stack
 
-## Components
+## Projects
+* Karyon
+* Spring Cloud Gateway
+* Eureka Server and Clients
+* Hystrix and Dashboard
+
+## Complete Scenario
 
 #### Infra Components
 * RabbitMQ

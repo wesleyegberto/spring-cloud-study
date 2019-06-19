@@ -4,6 +4,8 @@
 **/mvnw
 **/mvnw.cmd
 **/.mvn
+**/.vscode/
+.DS_Store
 
 ### Eclipse ###
 
